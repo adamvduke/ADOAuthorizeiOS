@@ -1,0 +1,6 @@
+[submodule "External/OAuthConsumer"]
+	path = External/OAuthConsumer
+	url = git@github.com:adamvduke/OAuthConsumer.git
+[submodule "External/SharedMacros"]
+	path = External/SharedMacros
+	url = git://gist.github.com/910486.git
