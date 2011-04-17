@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56634012134F8800008E3AE4 /* ADOAuthOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56634010134F8800008E3AE4 /* ADOAuthOOBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56634013134F8800008E3AE4 /* ADOAuthOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56634011134F8800008E3AE4 /* ADOAuthOOBViewController.m */; };
+		56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */; };
+		56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */; };
 		56634060134F922F008E3AE4 /* ADSharedMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5663405F134F922F008E3AE4 /* ADSharedMacros.h */; };
 		AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
@@ -32,8 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		56634010134F8800008E3AE4 /* ADOAuthOOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADOAuthOOBViewController.h; path = ViewController/ADOAuthOOBViewController.h; sourceTree = "<group>"; };
-		56634011134F8800008E3AE4 /* ADOAuthOOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADOAuthOOBViewController.m; path = ViewController/ADOAuthOOBViewController.m; sourceTree = "<group>"; };
+		56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADOAuthOOBViewController.h; path = Classes/ViewController/ADOAuthOOBViewController.h; sourceTree = "<group>"; };
+		56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADOAuthOOBViewController.m; path = Classes/ViewController/ADOAuthOOBViewController.m; sourceTree = "<group>"; };
 		56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = External/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
 		5663405F134F922F008E3AE4 /* ADSharedMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADSharedMacros.h; path = External/SharedMacros/ADSharedMacros.h; sourceTree = "<group>"; };
 		AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADOAuthorizeiOS_Prefix.pch; sourceTree = "<group>"; };
@@ -84,8 +84,8 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				56634010134F8800008E3AE4 /* ADOAuthOOBViewController.h */,
-				56634011134F8800008E3AE4 /* ADOAuthOOBViewController.m */,
+				56088FF4135B8F0E0015E3D4 /* Request */,
+				56088FE9135B8DA70015E3D4 /* ViewController */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -96,6 +96,22 @@
 				AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		56088FE9135B8DA70015E3D4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */,
+				56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		56088FF4135B8F0E0015E3D4 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Request;
 			sourceTree = "<group>";
 		};
 		56634019134F89AE008E3AE4 /* Products */ = {
@@ -139,8 +155,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */,
-				56634012134F8800008E3AE4 /* ADOAuthOOBViewController.h in Headers */,
 				56634060134F922F008E3AE4 /* ADSharedMacros.h in Headers */,
+				56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,7 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56634013134F8800008E3AE4 /* ADOAuthOOBViewController.m in Sources */,
+				56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
