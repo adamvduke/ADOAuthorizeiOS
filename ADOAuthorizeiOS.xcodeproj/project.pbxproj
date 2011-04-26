@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */; };
+		56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */; };
 		56634060134F922F008E3AE4 /* ADSharedMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 5663405F134F922F008E3AE4 /* ADSharedMacros.h */; };
 		AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */; };
