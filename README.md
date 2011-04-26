@@ -9,6 +9,7 @@ Building/Running:
 
 ADOAuthorizeiOS depends on several git submodules.
 The steps to get up and running are:
+
      git clone https://github.com/adamvduke/ADOAuthorizeiOS.git
      cd ADOAuthorizeiOS
      git submodule init
