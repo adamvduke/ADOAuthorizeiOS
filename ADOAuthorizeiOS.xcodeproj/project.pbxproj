@@ -259,7 +259,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ADOAuthorizeiOS_Prefix.pch;
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/External/OAuthConsumer/build/${BUILD_STYLE}-${PLATFORM_NAME}/usr/local/include";
+				HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/usr/local/include";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ADOAuthorizeiOS;
 			};
@@ -274,7 +274,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ADOAuthorizeiOS_Prefix.pch;
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/External/OAuthConsumer/build/${BUILD_STYLE}-${PLATFORM_NAME}/usr/local/include";
+				HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/usr/local/include";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ADOAuthorizeiOS;
 			};
