@@ -12,7 +12,7 @@
 #import "OAServiceTicket.h"
 #import "OAToken.h"
 
-@interface ADOAuthOOBViewController (Private)
+@interface ADOAuthOOBViewController ()
 
 - (void)fetchRequestToken;
 - (void)fetchAccessToken;
@@ -20,14 +20,17 @@
 - (void)loadAuthorizeRequest;
 - (NSString *)locateOAuthVerifierInWebView:(UIWebView *)aWebView;
 - (void)locatedVerifier:(NSString *)pin;
-
 - (NSURLRequest *)generateAuthorizeURLRequest;
+
+@property(nonatomic,retain)NSURL *requestTokenURL;
+@property(nonatomic,retain)NSURL *accessTokenURL;
+@property(nonatomic,retain)NSURL *authorizeURL;
 
 @end
 
 @implementation ADOAuthOOBViewController
 
-@synthesize webView, delegate, verifier;
+@synthesize webView, delegate, verifier, requestTokenURL, accessTokenURL, authorizeURL;
 
 #pragma mark -
 #pragma mark UIViewController life cycle
@@ -44,9 +47,9 @@
 	{
 		self.delegate = aDelegate;
 		consumer = [[OAConsumer alloc] initWithKey:key secret:secret];
-		requestTokenURL = [[NSURL URLWithString:requestTokenURLString] retain];
-		accessTokenURL = [[NSURL URLWithString:accessTokenURLString] retain];
-		authorizeURL = [[NSURL URLWithString:authorizeURLString] retain];
+		self.requestTokenURL = [NSURL URLWithString:requestTokenURLString];
+		self.accessTokenURL = [NSURL URLWithString:accessTokenURLString];
+		self.authorizeURL = [NSURL URLWithString:authorizeURLString];
 		firstLoad = YES;
 	}
 	return self;
@@ -71,10 +74,9 @@
 	NSLog(@"Loading ADOAuthOOBViewController...");
 
 	[super loadView];
-	self.webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 44, 320, 416)];
+	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
 	webView.delegate = self;
 	[self.view addSubview:webView];
-	[webView release];
 }
 
 - (void)viewDidLoad
@@ -110,7 +112,7 @@
  */
 - (void)fetchRequestToken
 {
-	[self requestURL:requestTokenURL
+	[self requestURL:self.requestTokenURL
 	           token:nil
 	       onSuccess:@selector(setRequestToken:withData:)
 	          onFail:@selector(outhTicketFailed:data:)];
@@ -161,7 +163,7 @@
  */
 - (void)fetchAccessToken
 {
-	[self requestURL:accessTokenURL
+	[self requestURL:self.accessTokenURL
 	           token:requestToken
 	       onSuccess:@selector(setAccessToken:withData:)
 	          onFail:@selector(outhTicketFailed:data:)];
@@ -236,7 +238,7 @@
 		/* we need a valid request token to generate the URL */
 		return nil;
 	}
-	OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] initWithURL:authorizeURL
+	OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] initWithURL:self.authorizeURL
 	                                                                consumer:nil
 	                                                                   token:requestToken
 	                                                                   realm:nil
