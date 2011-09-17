@@ -62,7 +62,6 @@
 	TT_RELEASE_SAFELY(requestToken);
 	TT_RELEASE_SAFELY(accessTokenURL);
 	TT_RELEASE_SAFELY(authorizeURL);
-	TT_RELEASE_SAFELY(delegate);
 	TT_RELEASE_SAFELY(webView);
 	TT_RELEASE_SAFELY(verifier);
 	[super dealloc];
