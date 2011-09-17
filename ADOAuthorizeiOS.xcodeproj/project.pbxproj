@@ -86,7 +86,6 @@
 		08FB77AEFE84172EC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				56088FF4135B8F0E0015E3D4 /* Request */,
 				56088FE9135B8DA70015E3D4 /* ViewController */,
 			);
 			name = Classes;
@@ -107,13 +106,6 @@
 				56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */,
 			);
 			name = ViewController;
-			sourceTree = "<group>";
-		};
-		56088FF4135B8F0E0015E3D4 /* Request */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Request;
 			sourceTree = "<group>";
 		};
 		56634019134F89AE008E3AE4 /* Products */ = {
