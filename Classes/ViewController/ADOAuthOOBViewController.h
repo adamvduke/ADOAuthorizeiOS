@@ -33,7 +33,7 @@
 }
 
 @property (nonatomic, retain) UIWebView *webView;
-@property (nonatomic, retain) id<ADOAuthOOBViewControllerDelegate> delegate;
+@property (nonatomic, assign) id<ADOAuthOOBViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString *verifier;
 
 - (id)initWithConsumerKey:(NSString *)key
