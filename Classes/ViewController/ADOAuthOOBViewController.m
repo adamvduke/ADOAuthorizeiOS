@@ -40,7 +40,7 @@
        requestTokenURLString:(NSString *)requestTokenURLString
         accessTokenURLString:(NSString *)accessTokenURLString
           authorizeURLString:(NSString *)authorizeURLString
-                    delegate:(id)aDelegate
+                    delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
 {
 	self = [super initWithNibName:nil bundle:nil];
 	if(self)

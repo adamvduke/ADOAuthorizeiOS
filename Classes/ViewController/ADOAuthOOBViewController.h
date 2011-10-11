@@ -41,5 +41,5 @@
 	requestTokenURLString:(NSString *)requestTokenURLString
 	 accessTokenURLString:(NSString *)accessTokenURLString
 	   authorizeURLString:(NSString *)authorizeURLString
-				 delegate:(id)aDelegate;
+				 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate;
 @end
