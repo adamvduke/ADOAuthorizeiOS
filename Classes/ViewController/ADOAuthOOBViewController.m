@@ -6,11 +6,13 @@
  */
 
 #import "ADOAuthOOBViewController.h"
+#import "ADSharedMacros.h"
 #import "OAConsumer.h"
 #import "OADataFetcher.h"
 #import "OAMutableURLRequest.h"
 #import "OAServiceTicket.h"
 #import "OAToken.h"
+#import "TTMacros.h"
 
 @interface ADOAuthOOBViewController ()
 
