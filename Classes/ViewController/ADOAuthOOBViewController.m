@@ -72,8 +72,6 @@
 /* Implement loadView to create a view hierarchy programmatically, without using a nib. */
 - (void)loadView
 {
-	NSLog(@"Loading ADOAuthOOBViewController...");
-
 	[super loadView];
 	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
 	webView.delegate = self;
@@ -224,7 +222,6 @@
 - (void)outhTicketFailed:(OAServiceTicket *)ticket data:(NSData *)data
 {
 	/* TODO: create an approprite NSError to return here */
-	NSLog(@"the ticket failed to load...");
 	[delegate authCompletedWithData:nil orError:nil];
 }
 
@@ -234,8 +231,6 @@
 {
 	if(!requestToken.key && requestToken.secret)
 	{
-		NSLog(@"can't create an authorize request without a request token...");
-
 		/* we need a valid request token to generate the URL */
 		return nil;
 	}
@@ -263,7 +258,6 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
-	NSLog(@"Finished loading the webview");
 	if(firstLoad)
 	{
 		[aWebView stringByEvaluatingJavaScriptFromString:@"window.scrollBy(0,200)"];
