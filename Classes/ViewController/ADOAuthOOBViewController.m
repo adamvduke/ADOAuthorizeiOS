@@ -280,19 +280,11 @@
 
 - (NSString *)locateOAuthVerifierInWebView:(UIWebView *)aWebView
 {
-	/* if the web view doesn't have any content
-	 * return nil
-	 */
-	NSString *html = [aWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
-	if( IsEmpty(html) )
-	{
-		return nil;
-	}
-
-	/* use javascript to get the value of the 'oauth_pin' element */
-	NSString *js = @"var d = document.getElementById('oauth_pin'); if (d) d = d.innerHTML;";
-	NSString *pin = [aWebView stringByEvaluatingJavaScriptFromString:js];
-	return pin;
+    /* Each OAuth provider is going to need a different implementation
+     * to scrape the pin out of the web view.
+     */
+    [NSException raise:@"ADOAuthMethodNotImplementedException" format:@"[%@]:%@", [[self class] description], NSStringFromSelector(_cmd)];
+    return nil;
 }
 
 - (void)locatedVerifier:(NSString *)aVerifier

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */; };
+		565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */; };
+		565833531451CEAD00E8073C /* ADTwitterOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565833511451CEAD00E8073C /* ADTwitterOOBViewController.m */; };
 		56C143C51369160C008588CA /* ADSharedMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C143C31369160C008588CA /* ADSharedMacros.h */; };
 		56FDFCBE1451CD3600AFD7DE /* TTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FDFCBD1451CD3600AFD7DE /* TTMacros.h */; };
 		AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */; };
@@ -35,6 +37,8 @@
 /* Begin PBXFileReference section */
 		56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADOAuthOOBViewController.h; path = Classes/ViewController/ADOAuthOOBViewController.h; sourceTree = "<group>"; };
 		56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADOAuthOOBViewController.m; path = Classes/ViewController/ADOAuthOOBViewController.m; sourceTree = "<group>"; };
+		565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADTwitterOOBViewController.h; path = Classes/ViewController/ADTwitterOOBViewController.h; sourceTree = "<group>"; };
+		565833511451CEAD00E8073C /* ADTwitterOOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADTwitterOOBViewController.m; path = Classes/ViewController/ADTwitterOOBViewController.m; sourceTree = "<group>"; };
 		56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = External/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
 		56C143C31369160C008588CA /* ADSharedMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADSharedMacros.h; path = External/ObjCMacros/ADSharedMacros.h; sourceTree = "<group>"; };
 		56FDFCBD1451CD3600AFD7DE /* TTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMacros.h; path = External/ObjCMacros/TTMacros.h; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 			children = (
 				56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */,
 				56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */,
+				565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */,
+				565833511451CEAD00E8073C /* ADTwitterOOBViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -153,6 +159,7 @@
 				56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */,
 				56C143C51369160C008588CA /* ADSharedMacros.h in Headers */,
 				56FDFCBE1451CD3600AFD7DE /* TTMacros.h in Headers */,
+				565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */,
+				565833531451CEAD00E8073C /* ADTwitterOOBViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
