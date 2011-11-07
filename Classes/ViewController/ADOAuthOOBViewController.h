@@ -13,6 +13,7 @@
 @protocol ADOAuthOOBViewControllerDelegate<NSObject>
 
 - (void)authCompletedWithData:(NSString *)authData orError:(NSError *)error;
+- (void)authCancelled;
 
 @end
 
@@ -20,6 +21,7 @@
 	UIWebView *webView;
 
 	@private
+    UIToolbar *toolBar;
 	NSURL *requestTokenURL;
 	NSURL *accessTokenURL;
 	NSURL *authorizeURL;
@@ -33,6 +35,7 @@
 }
 
 @property (nonatomic, retain) UIWebView *webView;
+@property (nonatomic, retain) UIToolbar *toolBar;
 @property (nonatomic, assign) id<ADOAuthOOBViewControllerDelegate> delegate;
 @property (nonatomic, retain) NSString *verifier;
 

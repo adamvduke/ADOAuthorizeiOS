@@ -23,7 +23,8 @@
 - (NSString *)locateOAuthVerifierInWebView:(UIWebView *)aWebView;
 - (void)locatedVerifier:(NSString *)pin;
 - (NSURLRequest *)generateAuthorizeURLRequest;
-
+- (void)authCompletedWithData:(NSString *)date orError:(NSError *)error;
+- (void)authCancelled;
 @property(nonatomic,retain)NSURL *requestTokenURL;
 @property(nonatomic,retain)NSURL *accessTokenURL;
 @property(nonatomic,retain)NSURL *authorizeURL;
@@ -32,7 +33,7 @@
 
 @implementation ADOAuthOOBViewController
 
-@synthesize webView, delegate, verifier, requestTokenURL, accessTokenURL, authorizeURL;
+@synthesize webView, delegate, verifier, requestTokenURL, accessTokenURL, authorizeURL, toolBar;
 
 #pragma mark -
 #pragma mark UIViewController life cycle
@@ -69,13 +70,44 @@
 	[super dealloc];
 }
 
+- (void)authCompletedWithData:(NSString *)data orError:(NSError *)error
+{
+    [delegate authCompletedWithData:data orError:error];
+}
+
+- (void)authCancelled
+{
+    [delegate authCancelled];
+}
+
+- (UIToolbar *)toolBar
+{
+    if (!toolBar)
+    {
+        CGRect toolBarFrame = CGRectMake(0, 0, 320, 44);
+        self.toolBar = [[UIToolbar alloc] initWithFrame:toolBarFrame];
+        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(authCancelled)];
+        self.toolBar.items = [NSArray arrayWithObject:cancelItem];
+    }
+    return toolBar;
+}
+
+- (UIWebView *)webView
+{
+    if(!webView)
+    {
+        self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 44, 320, 416)] autorelease];
+        webView.delegate = self;
+    }
+    return webView;
+}
+
 /* Implement loadView to create a view hierarchy programmatically, without using a nib. */
 - (void)loadView
 {
 	[super loadView];
-	self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 416)] autorelease];
-	webView.delegate = self;
-	[self.view addSubview:webView];
+    [self.view addSubview:self.toolBar];
+	[self.view addSubview:self.webView];
 }
 
 - (void)viewDidLoad
@@ -189,7 +221,7 @@
 	{
 		dataString = [dataString stringByAppendingFormat:@"&oauth_verifier=%@", verifier];
 	}
-	[delegate authCompletedWithData:dataString orError:nil];
+    [self authCompletedWithData:dataString orError:nil];
 }
 
 #pragma mark -
@@ -222,7 +254,7 @@
 - (void)outhTicketFailed:(OAServiceTicket *)ticket data:(NSData *)data
 {
 	/* TODO: create an approprite NSError to return here */
-	[delegate authCompletedWithData:nil orError:nil];
+    [self authCompletedWithData:nil orError:nil];
 }
 
 /* This generates a URL request that can be passed to a UIWebView. It will open a page in which the
