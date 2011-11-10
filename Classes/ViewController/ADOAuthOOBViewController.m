@@ -85,8 +85,8 @@
     if (!toolBar)
     {
         CGRect toolBarFrame = CGRectMake(0, 0, 320, 44);
-        self.toolBar = [[UIToolbar alloc] initWithFrame:toolBarFrame];
-        UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(authCancelled)];
+        self.toolBar = [[[UIToolbar alloc] initWithFrame:toolBarFrame] autorelease];
+        UIBarButtonItem *cancelItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(authCancelled)] autorelease];
         self.toolBar.items = [NSArray arrayWithObject:cancelItem];
     }
     return toolBar;
