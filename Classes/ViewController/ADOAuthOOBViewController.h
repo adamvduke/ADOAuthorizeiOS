@@ -37,7 +37,7 @@
 @property (nonatomic, retain) UIWebView *webView;
 @property (nonatomic, retain) UIToolbar *toolBar;
 @property (nonatomic, assign) id<ADOAuthOOBViewControllerDelegate> delegate;
-@property (nonatomic, retain) NSString *verifier;
+@property (nonatomic, copy) NSString *verifier;
 
 - (id)initWithConsumerKey:(NSString *)key
 		   consumerSecret:(NSString *)secret
