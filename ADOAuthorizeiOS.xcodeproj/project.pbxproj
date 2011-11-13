@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */; };
-		565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */; };
+		565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		565833531451CEAD00E8073C /* ADTwitterOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565833511451CEAD00E8073C /* ADTwitterOOBViewController.m */; };
 		56C143C51369160C008588CA /* ADSharedMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C143C31369160C008588CA /* ADSharedMacros.h */; };
 		56FDFCBE1451CD3600AFD7DE /* TTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FDFCBD1451CD3600AFD7DE /* TTMacros.h */; };
@@ -156,10 +156,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */,
+				565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */,
 				56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */,
 				56C143C51369160C008588CA /* ADSharedMacros.h in Headers */,
 				56FDFCBE1451CD3600AFD7DE /* TTMacros.h in Headers */,
-				565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +190,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0420;
 			};
 			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "ADOAuthorizeiOS" */;
 			compatibilityVersion = "Xcode 3.2";
