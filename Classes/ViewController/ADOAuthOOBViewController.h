@@ -18,20 +18,19 @@
 @end
 
 @interface ADOAuthOOBViewController : UIViewController <UIWebViewDelegate> {
-	UIWebView *webView;
-
-	@private
+    @private
+    UIWebView *webView;
     UIToolbar *toolBar;
-	NSURL *requestTokenURL;
-	NSURL *accessTokenURL;
-	NSURL *authorizeURL;
+    NSURL *requestTokenURL;
+    NSURL *accessTokenURL;
+    NSURL *authorizeURL;
 
-	OAConsumer *consumer;
-	OAToken *requestToken;
-	NSString *verifier;
+    OAConsumer *consumer;
+    OAToken *requestToken;
+    NSString *verifier;
 
-	BOOL firstLoad;
-	id<ADOAuthOOBViewControllerDelegate> delegate;
+    BOOL firstLoad;
+    id<ADOAuthOOBViewControllerDelegate> delegate;
 }
 
 @property (nonatomic, retain) UIWebView *webView;
@@ -41,11 +40,11 @@
 @property (nonatomic, assign) BOOL firstLoad;
 
 - (id)initWithConsumerKey:(NSString *)key
-		   consumerSecret:(NSString *)secret
-	requestTokenURLString:(NSString *)requestTokenURLString
-	 accessTokenURLString:(NSString *)accessTokenURLString
-	   authorizeURLString:(NSString *)authorizeURLString
-				 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate;
+           consumerSecret:(NSString *)secret
+    requestTokenURLString:(NSString *)requestTokenURLString
+     accessTokenURLString:(NSString *)accessTokenURLString
+       authorizeURLString:(NSString *)authorizeURLString
+                 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate;
 
 /* Subclasses MUST override this method.
  * A valid implementation should return a javascript snippet that scrapes the

@@ -25,9 +25,9 @@
 - (NSURLRequest *)generateAuthorizeURLRequest;
 - (void)authCompletedWithData:(NSString *)date orError:(NSError *)error;
 - (void)authCancelled;
-@property(nonatomic,retain)NSURL *requestTokenURL;
-@property(nonatomic,retain)NSURL *accessTokenURL;
-@property(nonatomic,retain)NSURL *authorizeURL;
+@property (nonatomic, retain) NSURL *requestTokenURL;
+@property (nonatomic, retain) NSURL *accessTokenURL;
+@property (nonatomic, retain) NSURL *authorizeURL;
 
 @end
 
@@ -38,36 +38,36 @@
 #pragma mark -
 #pragma mark UIViewController life cycle
 
-- (id)   initWithConsumerKey:(NSString *)key
-              consumerSecret:(NSString *)secret
-       requestTokenURLString:(NSString *)requestTokenURLString
-        accessTokenURLString:(NSString *)accessTokenURLString
-          authorizeURLString:(NSString *)authorizeURLString
-                    delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
+- (id)initWithConsumerKey:(NSString *)key
+           consumerSecret:(NSString *)secret
+    requestTokenURLString:(NSString *)requestTokenURLString
+     accessTokenURLString:(NSString *)accessTokenURLString
+       authorizeURLString:(NSString *)authorizeURLString
+                 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
 {
-	self = [super initWithNibName:nil bundle:nil];
-	if(self)
-	{
-		self.delegate = aDelegate;
-		consumer = [[OAConsumer alloc] initWithKey:key secret:secret];
-		self.requestTokenURL = [NSURL URLWithString:requestTokenURLString];
-		self.accessTokenURL = [NSURL URLWithString:accessTokenURLString];
-		self.authorizeURL = [NSURL URLWithString:authorizeURLString];
-		firstLoad = YES;
-	}
-	return self;
+    self = [super initWithNibName:nil bundle:nil];
+    if(self)
+    {
+        self.delegate = aDelegate;
+        consumer = [[OAConsumer alloc] initWithKey:key secret:secret];
+        self.requestTokenURL = [NSURL URLWithString:requestTokenURLString];
+        self.accessTokenURL = [NSURL URLWithString:accessTokenURLString];
+        self.authorizeURL = [NSURL URLWithString:authorizeURLString];
+        firstLoad = YES;
+    }
+    return self;
 }
 
 - (void)dealloc
 {
-	TT_RELEASE_SAFELY(consumer);
-	TT_RELEASE_SAFELY(requestTokenURL);
-	TT_RELEASE_SAFELY(requestToken);
-	TT_RELEASE_SAFELY(accessTokenURL);
-	TT_RELEASE_SAFELY(authorizeURL);
-	TT_RELEASE_SAFELY(webView);
-	TT_RELEASE_SAFELY(verifier);
-	[super dealloc];
+    TT_RELEASE_SAFELY(consumer);
+    TT_RELEASE_SAFELY(requestTokenURL);
+    TT_RELEASE_SAFELY(requestToken);
+    TT_RELEASE_SAFELY(accessTokenURL);
+    TT_RELEASE_SAFELY(authorizeURL);
+    TT_RELEASE_SAFELY(webView);
+    TT_RELEASE_SAFELY(verifier);
+    [super dealloc];
 }
 
 - (void)authCompletedWithData:(NSString *)data orError:(NSError *)error
@@ -82,7 +82,7 @@
 
 - (UIToolbar *)toolBar
 {
-    if (!toolBar)
+    if(!toolBar)
     {
         CGRect toolBarFrame = CGRectMake(0, 0, 320, 44);
         self.toolBar = [[[UIToolbar alloc] initWithFrame:toolBarFrame] autorelease];
@@ -105,33 +105,33 @@
 /* Implement loadView to create a view hierarchy programmatically, without using a nib. */
 - (void)loadView
 {
-	[super loadView];
+    [super loadView];
     [self.view addSubview:self.toolBar];
-	[self.view addSubview:self.webView];
+    [self.view addSubview:self.webView];
 }
 
 - (void)viewDidLoad
 {
-	[self fetchRequestToken];
+    [self fetchRequestToken];
 }
 
 /* Override to allow orientations other than the default portrait orientation. */
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)didReceiveMemoryWarning
 {
-	/* Releases the view if it doesn't have a superview. */
-	[super didReceiveMemoryWarning];
+    /* Releases the view if it doesn't have a superview. */
+    [super didReceiveMemoryWarning];
 
-	/* Release any cached data, images, etc. that aren't in use. */
+    /* Release any cached data, images, etc. that aren't in use. */
 }
 
 - (void)viewDidUnload
 {
-	[super viewDidUnload];
+    [super viewDidUnload];
 }
 
 #pragma mark -
@@ -143,10 +143,10 @@
  */
 - (void)fetchRequestToken
 {
-	[self requestURL:self.requestTokenURL
-	           token:nil
-	       onSuccess:@selector(setRequestToken:withData:)
-	          onFail:@selector(outhTicketFailed:data:)];
+    [self requestURL:self.requestTokenURL
+               token:nil
+           onSuccess:@selector(setRequestToken:withData:)
+              onFail:@selector(outhTicketFailed:data:)];
 }
 
 /*
@@ -157,25 +157,25 @@
  */
 - (void)setRequestToken:(OAServiceTicket *)ticket withData:(NSData *)data
 {
-	if(!ticket.didSucceed || !data)
-	{
-		return;
-	}
+    if(!ticket.didSucceed || !data)
+    {
+        return;
+    }
 
-	NSString *dataString = [[[NSString alloc] initWithData:data
-	                                              encoding:NSUTF8StringEncoding] autorelease];
-	if(!dataString)
-	{
-		return;
-	}
+    NSString *dataString = [[[NSString alloc] initWithData:data
+                                                  encoding:NSUTF8StringEncoding] autorelease];
+    if(!dataString)
+    {
+        return;
+    }
 
-	[requestToken release];
-	requestToken = [[OAToken alloc] initWithHTTPResponseBody:dataString];
-	if(verifier.length)
-	{
-		requestToken.verifier = verifier;
-	}
-	[self loadAuthorizeRequest];
+    [requestToken release];
+    requestToken = [[OAToken alloc] initWithHTTPResponseBody:dataString];
+    if(verifier.length)
+    {
+        requestToken.verifier = verifier;
+    }
+    [self loadAuthorizeRequest];
 }
 
 /* causes the webView to load a url request that will allow the user to authorize
@@ -183,8 +183,8 @@
  */
 - (void)loadAuthorizeRequest
 {
-	NSURLRequest *request = [self generateAuthorizeURLRequest];
-	[webView loadRequest:request];
+    NSURLRequest *request = [self generateAuthorizeURLRequest];
+    [webView loadRequest:request];
 }
 
 /* An access token is used to "sign" requests to the api. The access token
@@ -194,10 +194,10 @@
  */
 - (void)fetchAccessToken
 {
-	[self requestURL:self.accessTokenURL
-	           token:requestToken
-	       onSuccess:@selector(setAccessToken:withData:)
-	          onFail:@selector(outhTicketFailed:data:)];
+    [self requestURL:self.accessTokenURL
+               token:requestToken
+           onSuccess:@selector(setAccessToken:withData:)
+              onFail:@selector(outhTicketFailed:data:)];
 }
 
 /*
@@ -207,20 +207,20 @@
  */
 - (void)setAccessToken:(OAServiceTicket *)ticket withData:(NSData *)data
 {
-	if(!ticket.didSucceed || !data)
-	{
-		return;
-	}
+    if(!ticket.didSucceed || !data)
+    {
+        return;
+    }
 
-	NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
-	if(!dataString)
-	{
-		return;
-	}
-	if(verifier.length && [dataString rangeOfString:@"oauth_verifier"].location == NSNotFound)
-	{
-		dataString = [dataString stringByAppendingFormat:@"&oauth_verifier=%@", verifier];
-	}
+    NSString *dataString = [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
+    if(!dataString)
+    {
+        return;
+    }
+    if(verifier.length && [dataString rangeOfString:@"oauth_verifier"].location == NSNotFound)
+    {
+        dataString = [dataString stringByAppendingFormat:@"&oauth_verifier=%@", verifier];
+    }
     [self authCompletedWithData:dataString orError:nil];
 }
 
@@ -228,22 +228,22 @@
 #pragma mark OAuth helper methods
 - (void)requestURL:(NSURL *)url token:(OAToken *)token onSuccess:(SEL)success onFail:(SEL)fail
 {
-	OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] initWithURL:url
-	                                                                consumer:consumer
-	                                                                   token:token
-	                                                                   realm:nil
-	                                                       signatureProvider:nil] autorelease];
-	if(!request)
-	{
-		return;
-	}
-	if(verifier.length)
-	{
-		token.verifier = verifier;
-	}
-	[request setHTTPMethod:@"POST"];
-	OADataFetcher *fetcher = [[[OADataFetcher alloc] init] autorelease];
-	[fetcher fetchDataWithRequest:request delegate:self didFinishSelector:success didFailSelector:fail];
+    OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] initWithURL:url
+                                                                    consumer:consumer
+                                                                       token:token
+                                                                       realm:nil
+                                                           signatureProvider:nil] autorelease];
+    if(!request)
+    {
+        return;
+    }
+    if(verifier.length)
+    {
+        token.verifier = verifier;
+    }
+    [request setHTTPMethod:@"POST"];
+    OADataFetcher *fetcher = [[[OADataFetcher alloc] init] autorelease];
+    [fetcher fetchDataWithRequest:request delegate:self didFinishSelector:success didFailSelector:fail];
 }
 
 /*
@@ -253,7 +253,7 @@
  */
 - (void)outhTicketFailed:(OAServiceTicket *)ticket data:(NSData *)data
 {
-	/* TODO: create an approprite NSError to return here */
+    /* TODO: create an approprite NSError to return here */
     [self authCompletedWithData:nil orError:nil];
 }
 
@@ -261,20 +261,20 @@
  * user must enter their Twitter creds to validate */
 - (NSURLRequest *)generateAuthorizeURLRequest
 {
-	if(!requestToken.key && requestToken.secret)
-	{
-		/* we need a valid request token to generate the URL */
-		return nil;
-	}
-	OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] initWithURL:self.authorizeURL
-	                                                                consumer:nil
-	                                                                   token:requestToken
-	                                                                   realm:nil
-	                                                       signatureProvider:nil] autorelease];
-	OARequestParameter *oauth_token = [[[OARequestParameter alloc] initWithName:@"oauth_token"
-	                                                                      value:requestToken.key] autorelease];
-	[request setParameters:[NSArray arrayWithObject:oauth_token]];
-	return request;
+    if(!requestToken.key && requestToken.secret)
+    {
+        /* we need a valid request token to generate the URL */
+        return nil;
+    }
+    OAMutableURLRequest *request = [[[OAMutableURLRequest alloc] initWithURL:self.authorizeURL
+                                                                    consumer:nil
+                                                                       token:requestToken
+                                                                       realm:nil
+                                                           signatureProvider:nil] autorelease];
+    OARequestParameter *oauth_token = [[[OARequestParameter alloc] initWithName:@"oauth_token"
+                                                                          value:requestToken.key] autorelease];
+    [request setParameters:[NSArray arrayWithObject:oauth_token]];
+    return request;
 }
 
 #pragma mark -
@@ -329,8 +329,8 @@
 
 - (void)locatedVerifier:(NSString *)aVerifier
 {
-	self.verifier = aVerifier;
-	[self fetchAccessToken];
+    self.verifier = aVerifier;
+    [self fetchAccessToken];
 }
 
 @end
