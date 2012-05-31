@@ -38,6 +38,7 @@
 @property (nonatomic, retain) UIToolbar *toolBar;
 @property (nonatomic, assign) id<ADOAuthOOBViewControllerDelegate> delegate;
 @property (nonatomic, copy) NSString *verifier;
+@property (nonatomic, assign) BOOL firstLoad;
 
 - (id)initWithConsumerKey:(NSString *)key
 		   consumerSecret:(NSString *)secret
@@ -45,4 +46,11 @@
 	 accessTokenURLString:(NSString *)accessTokenURLString
 	   authorizeURLString:(NSString *)authorizeURLString
 				 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate;
+
+/* Subclasses MUST override this method.
+ * A valid implementation should return a javascript snippet that scrapes the
+ * pin out of the web view after the user has authorized the application.
+ */
+- (NSString *)javascriptToLocateOAuthVerifier;
+
 @end

@@ -6,30 +6,27 @@
  */
 
 #import "ADTwitterOOBViewController.h"
-#import "ADSharedMacros.h"
 
 @implementation ADTwitterOOBViewController
 
-- (NSString *)locateOAuthVerifierInWebView:(UIWebView *)aWebView
+- (NSString *)javascriptToLocateOAuthVerifier
 {
-	/* if the web view doesn't have any content
-	 * return nil
-	 */
-	NSString *html = [aWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
-	if( IsEmpty(html) )
-	{
-		return nil;
-	}
-    
-	/* Use javascript to get the value of <code>12345</code> element
+    /* Javascript to get the value of <code>12345</code> element
      * This is really brittle and sucky
      */
-    NSString *javaScript = @"var elements = document.getElementsByTagName('code'); \
+    return @"var elements = document.getElementsByTagName('code'); \
     var element = elements[0]; \
     var pin = null; \
     if (element) pin = element.innerHTML;";
-    NSString *pin = [aWebView stringByEvaluatingJavaScriptFromString:javaScript];
-	return pin;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView
+{
+    if(self.firstLoad)
+    {
+        [aWebView stringByEvaluatingJavaScriptFromString:@"window.scrollBy(0,200)"];
+    }
+    [super webViewDidFinishLoad:aWebView];
 }
 
 @end

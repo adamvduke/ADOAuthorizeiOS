@@ -33,7 +33,7 @@
 
 @implementation ADOAuthOOBViewController
 
-@synthesize webView, delegate, verifier, requestTokenURL, accessTokenURL, authorizeURL, toolBar;
+@synthesize webView, delegate, verifier, requestTokenURL, accessTokenURL, authorizeURL, toolBar, firstLoad;
 
 #pragma mark -
 #pragma mark UIViewController life cycle
@@ -290,27 +290,41 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
-	if(firstLoad)
-	{
-		[aWebView stringByEvaluatingJavaScriptFromString:@"window.scrollBy(0,200)"];
-		firstLoad = NO;
-		return;
-	}
-	NSString *authPin = [self locateOAuthVerifierInWebView:aWebView];
-	if(authPin.length)
-	{
-		[self locatedVerifier:authPin];
-		return;
-	}
+    if(firstLoad)
+    {
+        firstLoad = NO;
+        return;
+    }
+    NSString *authPin = [self locateOAuthVerifierInWebView:aWebView];
+    if(authPin.length)
+    {
+        [self locatedVerifier:authPin];
+        return;
+    }
 }
 
-- (NSString *)locateOAuthVerifierInWebView:(UIWebView *)aWebView
+- (NSString *)javascriptToLocateOAuthVerifier
 {
     /* Each OAuth provider is going to need a different implementation
      * to scrape the pin out of the web view.
      */
     [NSException raise:@"ADOAuthMethodNotImplementedException" format:@"[%@]:%@", [[self class] description], NSStringFromSelector(_cmd)];
     return nil;
+}
+
+- (NSString *)locateOAuthVerifierInWebView:(UIWebView *)aWebView
+{
+    /* if the web view doesn't have any content
+     * return nil
+     */
+    NSString *html = [aWebView stringByEvaluatingJavaScriptFromString:@"document.body.innerText"];
+    if( IsEmpty(html) )
+    {
+        return nil;
+    }
+    NSString *javaScript = [self javascriptToLocateOAuthVerifier];
+    NSString *pin = [aWebView stringByEvaluatingJavaScriptFromString:javaScript];
+    return pin;
 }
 
 - (void)locatedVerifier:(NSString *)aVerifier
