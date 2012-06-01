@@ -84,7 +84,7 @@
 {
     if(!toolBar)
     {
-        CGRect toolBarFrame = CGRectMake(0, 0, 320, 44);
+        CGRect toolBarFrame = CGRectMake(0, -1, 320, 44);
         self.toolBar = [[[UIToolbar alloc] initWithFrame:toolBarFrame] autorelease];
         UIBarButtonItem *cancelItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(authCancelled)] autorelease];
         self.toolBar.items = [NSArray arrayWithObject:cancelItem];
@@ -96,7 +96,7 @@
 {
     if(!webView)
     {
-        self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 44, 320, 416)] autorelease];
+        self.webView = [[[UIWebView alloc] initWithFrame:CGRectMake(0, 43, 320, 417)] autorelease];
         webView.delegate = self;
     }
     return webView;
