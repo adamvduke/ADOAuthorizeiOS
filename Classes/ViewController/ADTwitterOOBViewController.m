@@ -7,7 +7,27 @@
 
 #import "ADTwitterOOBViewController.h"
 
+#define REQUEST_TOKEN_URL @"https://api.twitter.com/oauth/request_token"
+#define ACCESS_TOKEN_URL @"https://api.twitter.com/oauth/access_token"
+#define AUTHORIZE_TOKEN_URL @"https://api.twitter.com/oauth/authorize"
+
 @implementation ADTwitterOOBViewController
+
+- (id)initWithConsumerKey:(NSString *)key
+           consumerSecret:(NSString *)secret
+                 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
+{
+    self = [super initWithConsumerKey:key
+                       consumerSecret:secret
+                requestTokenURLString:REQUEST_TOKEN_URL
+                 accessTokenURLString:ACCESS_TOKEN_URL
+                   authorizeURLString:AUTHORIZE_TOKEN_URL
+                             delegate:aDelegate];
+    if(self)
+    {
+    }
+    return self;
+}
 
 - (NSString *)javascriptToLocateOAuthVerifier
 {

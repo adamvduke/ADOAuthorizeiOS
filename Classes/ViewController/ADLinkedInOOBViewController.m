@@ -7,7 +7,27 @@
 
 #import "ADLinkedInOOBViewController.h"
 
+#define REQUEST_TOKEN_URL @"https://api.linkedin.com/uas/oauth/requestToken"
+#define ACCESS_TOKEN_URL @"https://api.linkedin.com/uas/oauth/accessToken"
+#define AUTHORIZE_TOKEN_URL @"https://www.linkedin.com/uas/oauth/authorize"
+
 @implementation ADLinkedInOOBViewController
+
+- (id)initWithConsumerKey:(NSString *)key
+           consumerSecret:(NSString *)secret
+                 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
+{
+    self = [super initWithConsumerKey:key
+                       consumerSecret:secret
+                requestTokenURLString:REQUEST_TOKEN_URL
+                 accessTokenURLString:ACCESS_TOKEN_URL
+                   authorizeURLString:AUTHORIZE_TOKEN_URL
+                             delegate:aDelegate];
+    if(self)
+    {
+    }
+    return self;
+}
 
 - (NSString *)javascriptToLocateOAuthVerifier
 {
