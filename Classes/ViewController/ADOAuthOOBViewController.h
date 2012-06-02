@@ -39,17 +39,31 @@
 @property (nonatomic, copy) NSString *verifier;
 @property (nonatomic, assign) BOOL firstLoad;
 
+/* Designated initializer */
 - (id)initWithConsumerKey:(NSString *)key
            consumerSecret:(NSString *)secret
-    requestTokenURLString:(NSString *)requestTokenURLString
-     accessTokenURLString:(NSString *)accessTokenURLString
-       authorizeURLString:(NSString *)authorizeURLString
                  delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate;
 
 /* Subclasses MUST override this method.
+ * Default implementation raises an exception
  * A valid implementation should return a javascript snippet that scrapes the
  * pin out of the web view after the user has authorized the application.
  */
 - (NSString *)javascriptToLocateOAuthVerifier;
+
+/* Subclasses MUST override this method.
+ * Default implementation raises an exception
+ */
+- (NSString *)requestTokenURLString;
+
+/* Subclasses MUST override this method.
+ * Default implementation raises an exception
+ */
+- (NSString *)accessTokenURLString;
+
+/* Subclasses MUST override this method.
+ * Default implementation raises an exception
+ */
+- (NSString *)authorizeTokenURLString;
 
 @end

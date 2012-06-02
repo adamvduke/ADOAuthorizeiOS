@@ -13,22 +13,8 @@
 
 @implementation ADTwitterOOBViewController
 
-- (id)initWithConsumerKey:(NSString *)key
-           consumerSecret:(NSString *)secret
-                 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
-{
-    self = [super initWithConsumerKey:key
-                       consumerSecret:secret
-                requestTokenURLString:REQUEST_TOKEN_URL
-                 accessTokenURLString:ACCESS_TOKEN_URL
-                   authorizeURLString:AUTHORIZE_TOKEN_URL
-                             delegate:aDelegate];
-    if(self)
-    {
-    }
-    return self;
-}
-
+#pragma mark -
+#pragma mark Subclass overrides
 - (NSString *)javascriptToLocateOAuthVerifier
 {
     /* Javascript to get the value of <code>12345</code> element
@@ -40,6 +26,32 @@
     if (element) pin = element.innerHTML;";
 }
 
+/* Subclasses MUST override this method.
+ * Default implementation raises an exception
+ */
+- (NSString *)requestTokenURLString
+{
+    return REQUEST_TOKEN_URL;
+}
+
+/* Subclasses MUST override this method.
+ * Default implementation raises an exception
+ */
+- (NSString *)accessTokenURLString
+{
+    return ACCESS_TOKEN_URL;
+}
+
+/* Subclasses MUST override this method.
+ * Default implementation raises an exception
+ */
+- (NSString *)authorizeTokenURLString
+{
+    return AUTHORIZE_TOKEN_URL;
+}
+
+#pragma mark -
+#pragma mark UIWebViewDelegate overrides
 - (void)webViewDidFinishLoad:(UIWebView *)aWebView
 {
     if(self.firstLoad)
@@ -48,5 +60,7 @@
     }
     [super webViewDidFinishLoad:aWebView];
 }
+
+
 
 @end

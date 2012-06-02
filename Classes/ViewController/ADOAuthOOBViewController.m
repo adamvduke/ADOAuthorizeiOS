@@ -40,19 +40,16 @@
 
 - (id)initWithConsumerKey:(NSString *)key
            consumerSecret:(NSString *)secret
-    requestTokenURLString:(NSString *)requestTokenURLString
-     accessTokenURLString:(NSString *)accessTokenURLString
-       authorizeURLString:(NSString *)authorizeURLString
                  delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate
 {
-    self = [super initWithNibName:nil bundle:nil];
+    self = self = [super initWithNibName:nil bundle:nil];
     if(self)
     {
         self.delegate = aDelegate;
         consumer = [[OAConsumer alloc] initWithKey:key secret:secret];
-        self.requestTokenURL = [NSURL URLWithString:requestTokenURLString];
-        self.accessTokenURL = [NSURL URLWithString:accessTokenURLString];
-        self.authorizeURL = [NSURL URLWithString:authorizeURLString];
+        self.requestTokenURL = [NSURL URLWithString:[self requestTokenURLString]];
+        self.accessTokenURL = [NSURL URLWithString:[self accessTokenURLString]];
+        self.authorizeURL = [NSURL URLWithString:[self authorizeTokenURLString]];
         firstLoad = YES;
     }
     return self;
@@ -331,6 +328,42 @@
 {
     self.verifier = aVerifier;
     [self fetchAccessToken];
+}
+
+/* Subclasses MUST override this method if they want to use the convenience initializer.
+ * Default implementation raises an exception
+ */
+- (NSString *)requestTokenURLString
+{
+    /* Each OAuth provider is going to need a different implementation
+     * to scrape the pin out of the web view.
+     */
+    [NSException raise:@"ADOAuthMethodNotImplementedException" format:@"[%@]:%@", [[self class] description], NSStringFromSelector(_cmd)];
+    return nil;
+}
+
+/* Subclasses MUST override this method if they want to use the convenience initializer.
+ * Default implementation raises an exception
+ */
+- (NSString *)accessTokenURLString
+{
+    /* Each OAuth provider is going to need a different implementation
+     * to scrape the pin out of the web view.
+     */
+    [NSException raise:@"ADOAuthMethodNotImplementedException" format:@"[%@]:%@", [[self class] description], NSStringFromSelector(_cmd)];
+    return nil;
+}
+
+/* Subclasses MUST override this method if they want to use the convenience initializer.
+ * Default implementation raises an exception
+ */
+- (NSString *)authorizeTokenURLString
+{
+    /* Each OAuth provider is going to need a different implementation
+     * to scrape the pin out of the web view.
+     */
+    [NSException raise:@"ADOAuthMethodNotImplementedException" format:@"[%@]:%@", [[self class] description], NSStringFromSelector(_cmd)];
+    return nil;
 }
 
 @end

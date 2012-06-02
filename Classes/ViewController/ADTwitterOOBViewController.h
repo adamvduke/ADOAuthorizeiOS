@@ -9,7 +9,4 @@
 
 @interface ADTwitterOOBViewController : ADOAuthOOBViewController
 
-- (id)initWithConsumerKey:(NSString *)key
-           consumerSecret:(NSString *)secret
-                 delegate:(id<ADOAuthOOBViewControllerDelegate>)aDelegate;
 @end
