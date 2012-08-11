@@ -7,12 +7,6 @@ It borrows concepts from Ben Gottlieb's [Twitter-OAuth-iPhone](https://github.co
 Building/Running:
 ----------------
 
-ADOAuthorizeiOS depends on several git submodules.
-The steps to get up and running are:
+ADOAuthorizeiOS uses [CocoaPods](http://cocoapods.org/) to satisfy it's dependencies. Add it to your Podfile as follows:
 
-     git clone https://github.com/adamvduke/ADOAuthorizeiOS.git
-     cd ADOAuthorizeiOS
-     git submodule init
-     git submodule update
-
-The submodules will be their own git repositories in the directories ADOAuthorizeiOS/External/
+     pod 'ADOAuthorizeiOS', :git => 'https://github.com/adamvduke/ADOAuthorizeiOS.git'
