@@ -1,0 +1,7 @@
+PODS:
+  - OAuthConsumer (0.0.1)
+  - ObjCMacros (0.0.1)
+
+DEPENDENCIES:
+  - OAuthConsumer
+  - ObjCMacros

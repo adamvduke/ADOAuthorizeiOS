@@ -11,39 +11,20 @@
 		56088FF3135B8E310015E3D4 /* ADOAuthOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */; };
 		565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		565833531451CEAD00E8073C /* ADTwitterOOBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 565833511451CEAD00E8073C /* ADTwitterOOBViewController.m */; };
-		56C143C51369160C008588CA /* ADSharedMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C143C31369160C008588CA /* ADSharedMacros.h */; };
-		56FDFCBE1451CD3600AFD7DE /* TTMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 56FDFCBD1451CD3600AFD7DE /* TTMacros.h */; };
+		8CAE309908A54EE590A9CA77 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C7D4B0ED864FA9A221732F /* libPods.a */; };
 		AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */; };
 		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		5663401F134F89AE008E3AE4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D;
-			remoteInfo = OAuthConsumer;
-		};
-		56634022134F89BE008E3AE4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D;
-			remoteInfo = OAuthConsumer;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
+		15C7D4B0ED864FA9A221732F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		56088FF0135B8E310015E3D4 /* ADOAuthOOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADOAuthOOBViewController.h; path = Classes/ViewController/ADOAuthOOBViewController.h; sourceTree = "<group>"; };
 		56088FF1135B8E310015E3D4 /* ADOAuthOOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADOAuthOOBViewController.m; path = Classes/ViewController/ADOAuthOOBViewController.m; sourceTree = "<group>"; };
 		565833501451CEAD00E8073C /* ADTwitterOOBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADTwitterOOBViewController.h; path = Classes/ViewController/ADTwitterOOBViewController.h; sourceTree = "<group>"; };
 		565833511451CEAD00E8073C /* ADTwitterOOBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADTwitterOOBViewController.m; path = Classes/ViewController/ADTwitterOOBViewController.m; sourceTree = "<group>"; };
-		56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuthConsumer.xcodeproj; path = External/OAuthConsumer/OAuthConsumer.xcodeproj; sourceTree = "<group>"; };
-		56C143C31369160C008588CA /* ADSharedMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADSharedMacros.h; path = External/ObjCMacros/ADSharedMacros.h; sourceTree = "<group>"; };
-		56FDFCBD1451CD3600AFD7DE /* TTMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TTMacros.h; path = External/ObjCMacros/TTMacros.h; sourceTree = "<group>"; };
+		618774A38F21471F851D9D76 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		AA747D9E0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADOAuthorizeiOS_Prefix.pch; sourceTree = "<group>"; };
-		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AAC07E0554694100DB518D /* libADOAuthorizeiOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libADOAuthorizeiOS.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -53,6 +34,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+				8CAE309908A54EE590A9CA77 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,10 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				08FB77AEFE84172EC02AAC07 /* Classes */,
-				56634036134F8B02008E3AE4 /* External */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				618774A38F21471F851D9D76 /* Pods.xcconfig */,
 			);
 			name = ADOAuthiOS;
 			sourceTree = "<group>";
@@ -83,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+				15C7D4B0ED864FA9A221732F /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,40 +97,6 @@
 			name = ViewController;
 			sourceTree = "<group>";
 		};
-		56634019134F89AE008E3AE4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				56634020134F89AE008E3AE4 /* libOAuthConsumer.a */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		56634036134F8B02008E3AE4 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				56634062134F926F008E3AE4 /* OAuthConsumer */,
-				56634061134F9239008E3AE4 /* SharedMacros */,
-			);
-			name = External;
-			sourceTree = "<group>";
-		};
-		56634061134F9239008E3AE4 /* SharedMacros */ = {
-			isa = PBXGroup;
-			children = (
-				56FDFCBD1451CD3600AFD7DE /* TTMacros.h */,
-				56C143C31369160C008588CA /* ADSharedMacros.h */,
-			);
-			name = SharedMacros;
-			sourceTree = "<group>";
-		};
-		56634062134F926F008E3AE4 /* OAuthConsumer */ = {
-			isa = PBXGroup;
-			children = (
-				56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */,
-			);
-			name = OAuthConsumer;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -158,8 +107,6 @@
 				AA747D9F0F9514B9006C5449 /* ADOAuthorizeiOS_Prefix.pch in Headers */,
 				565833521451CEAD00E8073C /* ADTwitterOOBViewController.h in Headers */,
 				56088FF2135B8E310015E3D4 /* ADOAuthOOBViewController.h in Headers */,
-				56C143C51369160C008588CA /* ADSharedMacros.h in Headers */,
-				56FDFCBE1451CD3600AFD7DE /* TTMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,11 +120,11 @@
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
 				D2AAC07C0554694100DB518D /* Frameworks */,
+				7F5FE79A2BD2465693607866 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				56634023134F89BE008E3AE4 /* PBXTargetDependency */,
 			);
 			name = ADOAuthorizeiOS;
 			productName = ADOAuthiOS;
@@ -205,12 +152,6 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* ADOAuthiOS */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 56634019134F89AE008E3AE4 /* Products */;
-					ProjectRef = 56634018134F89AE008E3AE4 /* OAuthConsumer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				D2AAC07D0554694100DB518D /* ADOAuthorizeiOS */,
@@ -218,15 +159,22 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXReferenceProxy section */
-		56634020134F89AE008E3AE4 /* libOAuthConsumer.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libOAuthConsumer.a;
-			remoteRef = 5663401F134F89AE008E3AE4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
+/* Begin PBXShellScriptBuildPhase section */
+		7F5FE79A2BD2465693607866 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 		};
-/* End PBXReferenceProxy section */
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2AAC07B0554694100DB518D /* Sources */ = {
@@ -240,17 +188,10 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		56634023134F89BE008E3AE4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = OAuthConsumer;
-			targetProxy = 56634022134F89BE008E3AE4 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		1DEB921F08733DC00010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618774A38F21471F851D9D76 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -262,7 +203,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ADOAuthorizeiOS_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/usr/local/include";
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ADOAuthorizeiOS;
 			};
@@ -270,6 +211,7 @@
 		};
 		1DEB922008733DC00010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 618774A38F21471F851D9D76 /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
@@ -278,7 +220,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ADOAuthorizeiOS_Prefix.pch;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				HEADER_SEARCH_PATHS = "$(CONFIGURATION_BUILD_DIR)/usr/local/include";
+				HEADER_SEARCH_PATHS = "${PODS_HEADERS_SEARCH_PATHS}";
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = ADOAuthorizeiOS;
 			};
